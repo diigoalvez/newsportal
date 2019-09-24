@@ -16,6 +16,7 @@ import {
 import { NewsPortalComponent } from 'app/news-portal/news-portal.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ComponentsModule } from 'app/components/components.module';
+import { MoviesReviewsComponent } from 'app/movies-reviews/movies-reviews.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -33,7 +34,8 @@ import { ComponentsModule } from 'app/components/components.module';
   ],
   declarations: [
     IconsComponent,
-    NewsPortalComponent
+    NewsPortalComponent,
+    MoviesReviewsComponent
   ]
 })
 
