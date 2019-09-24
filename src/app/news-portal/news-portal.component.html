@@ -1,0 +1,21 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-6" *ngFor="let item of newsList">
+        <div class="card" style="width:100%;height:200px;">
+          <a target="_blank" href="{{item.url}}">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">
+                  {{ (item.title.length>50)? (item.title | slice:0:50)+'...':(item.title)}}
+              </h4>
+              <p class="card-category">{{item.byline}}</p>
+            </div>
+          </a>
+          <div class="card-body">
+            <p>{{ (item.abstract.length>150)? (item.abstract | slice:0:150)+'...':(item.abstract)}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
