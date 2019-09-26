@@ -30,6 +30,7 @@ import { MoviesReviewsComponent } from 'app/movies-reviews/movies-reviews.compon
     MatSelectModule,
     MatTooltipModule,
     HttpClientModule,
+    MatSelectModule,
     ComponentsModule
   ],
   declarations: [

@@ -10,7 +10,7 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-  getTopStories(): Observable<any> {
-    return this.http.get('https://api.nytimes.com/svc/topstories/v2/science.json?api-key=' + API_KEY);
+  getTopStories(categorie = 'science'): Observable<any> {
+    return this.http.get('https://api.nytimes.com/svc/topstories/v2/' + categorie + '.json?api-key=' + API_KEY);
   }
 }

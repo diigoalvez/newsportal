@@ -47,13 +47,13 @@ export class NavbarComponent implements OnInit {
     };
     sidebarClose() {
         const body = document.getElementsByTagName('body')[0];
-        this.toggleButton.classList.remove('toggled');
-        this.sidebarVisible = false;
-        body.classList.remove('nav-open');
+        if (this.toggleButton) {
+            this.toggleButton.classList.remove('toggled');
+            this.sidebarVisible = false;
+            body.classList.remove('nav-open');
+        }
     };
     sidebarToggle() {
-        // const toggleButton = this.toggleButton;
-        // const body = document.getElementsByTagName('body')[0];
         const toggle = document.getElementsByClassName('navbar-toggler')[0];
 
         if (this.sidebarVisible === false) {
@@ -65,7 +65,6 @@ export class NavbarComponent implements OnInit {
         const layer = document.createElement('div');
 
         if (this.mobile_menu_visible === 1) {
-            // $('html').removeClass('nav-open');
             body.classList.remove('nav-open');
             if (layer) {
                 layer.remove();

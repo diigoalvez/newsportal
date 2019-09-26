@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'shared/services/news.service';
 import { NewsModel } from 'shared/models/news';
+import { NEWS_CATEGORIES } from '../../shared/constants/CONFIGS'
 
 @Component({
   selector: 'app-news-portal',
@@ -10,14 +11,14 @@ import { NewsModel } from 'shared/models/news';
 export class NewsPortalComponent implements OnInit {
 
   newsList: NewsModel[];
+  newsCategories = NEWS_CATEGORIES;
   constructor(private _newsService: NewsService) { }
 
   ngOnInit() {
-    this._getNews();
   }
 
-  private _getNews() {
-    this._newsService.getTopStories().subscribe((data: any) => {
+  getNews(newsCategorie) {
+    this._newsService.getTopStories(newsCategorie).subscribe((data: any) => {
       this.newsList = data.results;
     });
   }

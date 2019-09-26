@@ -1,12 +1,24 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-6" *ngFor="let item of newsList">
+      <div class="col-12">
+        <mat-form-field>
+          <mat-label>News Categorie</mat-label>
+          <mat-select (selectionChange)="getNews($event.value)">
+            <mat-option *ngFor="let categories of newsCategories" [value]="categories">
+              {{categories | titlecase }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let item of newsList">
         <div class="card" style="width:100%;height:200px;">
           <a target="_blank" href="{{item.url}}">
             <div class="card-header card-header-info">
               <h4 class="card-title">
-                  {{ (item.title.length>50)? (item.title | slice:0:50)+'...':(item.title)}}
+                {{ (item.title.length>50)? (item.title | slice:0:50)+'...':(item.title)}}
               </h4>
               <p class="card-category">{{item.byline}}</p>
             </div>
